@@ -241,6 +241,196 @@
   color: #1e293b;
   letter-spacing: -0.2px;
 }
+
+/* 하단 푸터 사업자 및 학원법 필수 표기 */
+.campus-footer {
+  margin-top: 28px;
+  padding: 22px 18px 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 12px;
+  line-height: 1.65;
+  color: #94a3b8;
+  text-align: left;
+}
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #cbd5e1; /* 밝은 배경 푸터라면 #334155 로 변경 */
+}
+.footer-text-logo {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 19px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  color: #ffffff; /* 밝은 배경 푸터라면 #0f172a 로 변경 */
+}
+}
+.footer-main-biz {
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 10px;
+}
+.biz-title {
+  margin: 0 0 4px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #f8fafc;
+}
+.biz-tag {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 1px 6px;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: #93c5fd;
+  background: rgba(59, 130, 246, 0.18);
+  border-radius: 4px;
+  vertical-align: middle;
+}
+.biz-line {
+  margin: 2px 0;
+  color: #cbd5e1;
+  word-break: keep-all;
+}
+.footer-sub-biz {
+  padding: 0 4px;
+}
+.biz-sub-item {
+  margin: 0 0 8px;
+  color: #94a3b8;
+  word-break: keep-all;
+}
+.biz-sub-item strong {
+  color: #cbd5e1;
+  font-weight: 600;
+}
+.footer-copy {
+  margin: 14px 0 0;
+  font-size: 11px;
+  color: #64748b;
+  text-align: center;
+}
+/* 학원별 교습비 요약 안내 스타일 */
+.fee-section {
+  margin: 24px 0 18px;
+}
+.fee-accordion {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+  overflow: hidden;
+  text-align: left;
+}
+.fee-header {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px;
+  background: #f8fafc;
+  cursor: pointer;
+  user-select: none;
+}
+.fee-header::-webkit-details-marker {
+  display: none;
+}
+.fee-badge {
+  display: inline-block;
+  padding: 3px 8px;
+  margin-bottom: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #1d4ed8;
+  background: #dbeafe;
+  border-radius: 5px;
+}
+.fee-title {
+  margin: 0 0 4px;
+  font-size: 15.5px;
+  font-weight: 800;
+  color: #0f172a;
+}
+.fee-date {
+  margin: 0;
+  font-size: 12px;
+  color: #475569;
+}
+.fee-arrow {
+  font-size: 12px;
+  color: #334155;
+  transition: transform 0.2s ease;
+}
+.fee-accordion[open] .fee-arrow {
+  transform: rotate(180deg);
+}
+.fee-body {
+  padding: 14px 16px 18px;
+  background: #ffffff;
+  border-top: 1px solid #e2e8f0;
+}
+.fee-summary-notice {
+  padding: 8px 12px;
+  margin-bottom: 14px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e3a8a;
+  background: #eff6ff;
+  border-radius: 8px;
+  text-align: center;
+}
+.fee-region-box {
+  margin-bottom: 14px;
+  padding: 12px 14px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+}
+.fee-region-title {
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 800;
+  color: #0f172a;
+}
+.fee-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.fee-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px dashed #e2e8f0;
+  font-size: 13px;
+  color: #334155;
+}
+.fee-list li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.fee-list strong {
+  font-weight: 800;
+  color: #0f172a;
+}
+.fee-policy-list {
+  margin: 12px 0 0;
+  padding-left: 16px;
+  font-size: 12px;
+  line-height: 1.65;
+  color: #475569;
+  word-break: keep-all;
+}
+.fee-policy-list li {
+  margin-bottom: 3px;
+}
   </style>
  </head>
  <body>
@@ -449,14 +639,98 @@
      </div>
     </section>
    </main>
+<!-- 학원별 교습비 및 기타경비 안내 섹션 (요약 버전) -->
+<section class="fee-section" aria-label="학원별 교습비 및 기타경비 안내">
+  <details class="fee-accordion">
+    <summary class="fee-header">
+      <div class="fee-title-wrap">
+        <span class="fee-badge">법정 의무 게시</span>
+        <h3 class="fee-title">학원별 교습비 및 기타경비 안내</h3>
+        <p class="fee-date">눌러서 지역별 교습비(수강료+차량비) 및 등록 안내 확인</p>
+      </div>
+      <span class="fee-arrow">▼</span>
+    </summary>
 
-<footer>
-    <img class="logo-img" src="jeet-logo.png" alt="JEET">
-    <p style="margin-bottom:8px; color:#d7e0ea; font-weight:700;">초등부터 고등까지, 단계에 맞춘 수학 교육.</p>
-    <p>[악어수학] 지트에듀케이션죽전학원 | 등록번호: 제2875-4호 | 교습과정: 보습</p>
-    <p>[중등자사센터] 지트에듀케이션 보정학원 | 등록번호: 제3215-8호 | 교습과정: 종합(보습,진학상담)</p>
-    <p>[고등관] 지트에듀케이션클라비스학원 | 등록번호: 제5321-2호 | 교습과정: 보습</p>
-   </footer>
+    <div class="fee-body">
+      <div class="fee-summary-notice">교습비는 수강료+차량비 기준입니다.</div>
+
+      <!-- (용인) -->
+      <div class="fee-region-box">
+        <div class="fee-region-title">(용인)</div>
+        <ul class="fee-list">
+          <li><span>140분 × 주2회 × 4.3주</span><strong>29만원 (수학)</strong></li>
+          <li><span>140분 × 주3회 × 4.3주</span><strong>38만원 (수학)</strong></li>
+          <li><span>130분 × 주3회 × 4.3주</span><strong>39만원 (수학)</strong></li>
+          <li><span>130분 × 주3회 × 4.3주</span><strong>42만원 (수학)</strong></li>
+          <li><span>240분 × 주2회 × 4.3주</span><strong>52만원 (수학)</strong></li>
+          <li><span>240분 × 주2회 × 4.3주</span><strong>46만원 (수학)</strong></li>
+          <li><span>210분 × 주1회 × 4.3주</span><strong>48만원 (수학)</strong></li>
+          <li><span>240분 × 주3회 × 4.3주</span><strong>72만원 (수학)</strong></li>
+          <li><span>240분 × 주4회 × 4.3주</span><strong>93만원 (수학)</strong></li>
+          <li><span>130분 × 주1회 × 4주</span><strong>14만원 (과학)</strong></li>
+          <li><span>210분 × 주1회 × 4주</span><strong>19만원 (과학)</strong></li>
+          <li><span>210분 × 주1회 × 4주</span><strong>20만원 (과학)</strong></li>
+        </ul>
+      </div>
+
+      <!-- (수원) -->
+      <div class="fee-region-box">
+        <div class="fee-region-title">(수원)</div>
+        <ul class="fee-list">
+          <li><span>140분 × 주2회 × 4.3주</span><strong>26.5만원 (수학)</strong></li>
+          <li><span>140분 × 주3회 × 4.3주</span><strong>36.5만원 (수학)</strong></li>
+          <li><span>130분 × 주3회 × 4.3주</span><strong>38만원 (수학)</strong></li>
+          <li><span>130분 × 주3회 × 4.3주</span><strong>40만원 (수학)</strong></li>
+          <li><span>240분 × 주2회 × 4.3주</span><strong>49만원 (수학)</strong></li>
+          <li><span>300분 × 주1회 × 4.3주</span><strong>48만원 (수학)</strong></li>
+          <li><span>240분 × 주2회 × 4.3주</span><strong>46만원 (수학)</strong></li>
+          <li><span>130분 × 주1회 × 4주</span><strong>15만원 (과학)</strong></li>
+          <li><span>195분 × 주1회 × 4주</span><strong>20만원 (과학)</strong></li>
+        </ul>
+      </div>
+
+      <!-- 하단 필수 유의사항 -->
+      <ul class="fee-policy-list">
+        <li>학원일정(학원방학/간담회/워크숍), 공휴일 및 대체공휴일, 국경일은 수강료 차감되지 않습니다.</li>
+        <li>최초 학원등록시 월초변경 원칙으로 진행됩니다.</li>
+        <li>수학능력시험은 환불이 불가합니다.</li>
+        <li>학원법상 교재는 동시 결제 불가능합니다.</li>
+      </ul>
+    </div>
+  </details>
+</section>
+<footer class="campus-footer">
+ <!-- JEET 텍스트 로고 + 브랜드명 -->
+  <div class="footer-brand">
+    <span class="footer-text-logo">JEET</span>
+    <span>죽전캠퍼스 · 지트에듀케이션</span>
+  </div>
+
+  <!-- 1. 광고 집행 대표 사업자 (지트에듀케이션 죽전학원) -->
+  <div class="footer-main-biz">
+    <p class="biz-title">지트에듀케이션 죽전학원 <span class="biz-tag">광고 집행 사업자</span></p>
+    <p class="biz-line">
+      대표자: [임남철] &nbsp;|&nbsp; 사업자등록번호: [142-85-13427] &nbsp;|&nbsp; 학원설립·운영등록번호: 제[2875-4]호
+    </p>
+    <p class="biz-line">
+      교습과정: 보습(수학) &nbsp;|&nbsp; 주소: 경기도 용인시 기흥구 보정로 115, 우영프라자 701, 702호
+    </p>
+  </div>
+
+  <!-- 2. 캠퍼스 연계 학원 안내 (보정학원 · 클라비스학원) -->
+  <div class="footer-sub-biz">
+    <p class="biz-sub-item">
+      <strong>지트에듀케이션 보정학원</strong> &nbsp;|&nbsp; 학원설립·운영등록번호: 제[3215-8]호 &nbsp;|&nbsp; 교습과정: 보습(수학)<br>
+      주소: 경기도 용인시 기흥구 죽현로 29, 현대휴먼프라자 304호, 6층, 8층 전체
+    </p>
+    <p class="biz-sub-item">
+      <strong>지트에듀케이션클라비스학원</strong> &nbsp;|&nbsp; 학원설립·운영등록번호: 제[5321-2]호 &nbsp;|&nbsp; 교습과정: 보습(수학)<br>
+      주소: 경기도 용인시 기흥구 죽전로 33, 이데아프라자 401, 701, 702, 801, 802호
+    </p>
+  </div>
+
+  <p class="footer-copy">© JEET Education. All rights reserved.</p>
+</footer>
   </div>
 
 <!-- 겨울방학 무료 특강 3장 연속 보기 팝업 -->
