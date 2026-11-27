@@ -418,7 +418,7 @@
 
      <div class="place-list">
       <!-- 1. 초등관 링크 -->
-      <a class="place-card" href="https://naver.me/FORUqhAJ" target="_blank" rel="noopener noreferrer" data-reveal>
+      <a class="place-card" href="https://naver.me/FORUqhAJ" data-track-campus="초등 악어수학" target="_blank" rel="noopener noreferrer" data-reveal>
        <div class="place-info">
         <span class="place-badge"><span class="naver-n">N</span> 초등부</span>
         <span class="place-name">악어수학</span>
@@ -428,7 +428,7 @@
       </a>
 
       <!-- 2. 중등관 링크 -->
-      <a class="place-card" href="https://naver.me/5c8YxAxf" target="_blank" rel="noopener noreferrer" data-reveal>
+      <a class="place-card" href="https://naver.me/5c8YxAxf" data-track-campus="중등자사센터" target="_blank" rel="noopener noreferrer" data-reveal>
        <div class="place-info">
         <span class="place-badge"><span class="naver-n">N</span> 중등부</span>
         <span class="place-name">중등자사센터</span>
@@ -438,7 +438,7 @@
       </a>
 
       <!-- 3. 고등관 링크 -->
-      <a class="place-card" href="https://naver.me/FWTpRP9M" target="_blank" rel="noopener noreferrer" data-reveal>
+      <a class="place-card" href="https://naver.me/FWTpRP9M" data-track-campus="고등관" target="_blank" rel="noopener noreferrer" data-reveal>
        <div class="place-info">
         <span class="place-badge"><span class="naver-n">N</span> 고등부</span>
         <span class="place-name">지트 고등관</span>
@@ -642,5 +642,52 @@
       setInterval(hideNetlifyBadge, 500);
     })();
   </script>
- </body>
+ 
+  <!-- 광고 방문·네이버 플레이스 클릭 추적 -->
+  <script>
+    (function () {
+      var TRACKING_URL = 'https://script.google.com/macros/s/AKfycbxG4vzNT7G8dZsDMW_lfQ8fRoXvR7GDh1NIIFEviKAjF0t_Ewp8lH17bLbA71SAUZguDg/exec';
+      var params = new URLSearchParams(window.location.search);
+
+      function sendTracking(eventType, campus) {
+        var payload = {
+          event_type: eventType,
+          utm_source: params.get('utm_source') || '',
+          utm_medium: params.get('utm_medium') || '',
+          utm_campaign: params.get('utm_campaign') || '',
+          campus: campus || '',
+          page_url: window.location.href,
+          referrer: document.referrer || ''
+        };
+
+        var body = new Blob([JSON.stringify(payload)], {
+          type: 'text/plain;charset=UTF-8'
+        });
+
+        if (navigator.sendBeacon) {
+          var queued = navigator.sendBeacon(TRACKING_URL, body);
+          if (queued) return;
+        }
+
+        fetch(TRACKING_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          body: body,
+          keepalive: true
+        }).catch(function () {});
+      }
+
+      // 랜딩페이지 방문 기록
+      sendTracking('page_view', '');
+
+      // 관별 네이버 플레이스 예약 버튼 클릭 기록
+      document.querySelectorAll('[data-track-campus]').forEach(function (link) {
+        link.addEventListener('click', function () {
+          sendTracking('place_click', link.getAttribute('data-track-campus'));
+        });
+      });
+    })();
+  </script>
+
+  </body>
 </html>
